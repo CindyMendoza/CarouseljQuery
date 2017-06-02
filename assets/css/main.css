@@ -1,0 +1,16 @@
+body{
+  box-sizing: border-box;
+  padding: 0;
+  border: 0;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+}
+
+section div {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+}
