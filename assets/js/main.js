@@ -1,20 +1,38 @@
 
+var slideIndex = 1;
 
+showSlides(slideIndex);
 
-var images = ["assets/img/dish1.jpg","assets/img/dish2.jpg","assets/img/dish3.jpg","assets/img/dish4.jpg","assets/img/dish5.jpg"];
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
 
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
 
-var LoadImages = () => {
-  for(var i = 0; i<images.length; i++){
-    var div = $("<div/>");
-    var img = $("<img/>").attr("src", images[i]);
-    div.append(img);
-    $("#carousel").append(div);
-  console.log(images[i]);
+function showSlides(n) {
+  var i;
+  var slides = $(".mySlides");
+  var dots = $(".dot");
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
   }
+
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace("active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 5000);
+
 }
 
 
-$(document).ready(function(){
-  LoadImages();
-});
+/*
+
+     // Change image every 2 seconds
+}
+*/

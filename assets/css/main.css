@@ -1,7 +1,19 @@
-body{
-  box-sizing: border-box;
+* {
+  box-sizing:border-box;
   padding: 0;
   border: 0;
+  margin: 0;
+}
+
+.slideshow-container {
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
 }
 
 img{
@@ -9,8 +21,44 @@ img{
   height: 100%;
 }
 
-section div {
-  width: 200px;
-  height: 200px;
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.next {
+  right: 0;
+}
+
+
+.dot {
+  cursor:pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 4px;
+  background-color: silver;
+  border-radius: 50%;
   display: inline-block;
+}
+
+.active, .dot:hover {
+  background-color: rgb(113, 113, 113);
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .7}
+  to {opacity: 1}
 }
